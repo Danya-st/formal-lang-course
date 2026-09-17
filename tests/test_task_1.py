@@ -1,5 +1,6 @@
-import sys
 import pathlib
+import sys
+
 sys.path.insert(0, str(pathlib.Path(__file__).parent.parent))
 import networkx as nx
 import pydot
@@ -40,7 +41,6 @@ def test_generations_graph():
 def test_unknown_graph_raises_error():
     with pytest.raises(FileNotFoundError):
         get_graph_info("nonexistent_graph_xyz")
-
 
 
 def test_returns_multidigraph(tmp_path: pathlib.Path):
