@@ -45,7 +45,7 @@
   - Требуемая функция:
   ```python
   def graph_to_nfa(
-    graph: MultiDiGraph, start_states: Set[int], final_states: Set[int]
+      graph: MultiDiGraph, start_states: Set[int], final_states: Set[int]
   ) -> NondeterministicFiniteAutomaton:
       pass
   ```
@@ -58,24 +58,28 @@
 - [ ] Реализовать функцию-интерпретатор для типа `AdjacencyMatrixFA`, выясняющую, принимает ли автомат заданную строку и является ли язык, задающийся автоматом, пустым. Для реализации последней функции рекомендуется использовать транзитивное замыкание матрицы смежности.
   - Требуемые функции:
      ```python
-    def accepts(self, word: Iterable[Symbol]) -> bool:
-      pass
-    def is_empty(self) -> bool:
-      pass
+     def accepts(self, word: Iterable[Symbol]) -> bool:
+         pass
+
+
+     def is_empty(self) -> bool:
+         pass
     ```
 - [ ] Используя [разреженные матрицы из sciPy](https://docs.scipy.org/doc/scipy/reference/sparse.html) реализовать **функцию** пересечения двух конечных автоматов через тензорное произведение.
   - Требуемая функция:
      ```python
-    def intersect_automata(automaton1: AdjacencyMatrixFA,
-             automaton2: AdjacencyMatrixFA) -> AdjacencyMatrixFA:
-        pass
+     def intersect_automata(
+         automaton1: AdjacencyMatrixFA, automaton2: AdjacencyMatrixFA
+     ) -> AdjacencyMatrixFA:
+         pass
     ```
 - [ ] На основе предыдущей функции реализовать **функцию** выполнения регулярных запросов к графам: по графу с заданными стартовыми и финальными вершинами и регулярному выражению вернуть те пары вершин из заданных стартовых и финальных, которые связанны путём, формирующем слово из языка, задаваемого регулярным выражением.
   - Требуемая функция:
      ```python
-    def tensor_based_rpq(regex: str, graph: MultiDiGraph, start_nodes: set[int],
-           final_nodes: set[int]) -> set[tuple[int, int]]:
-        pass
+     def tensor_based_rpq(
+         regex: str, graph: MultiDiGraph, start_nodes: set[int], final_nodes: set[int]
+     ) -> set[tuple[int, int]]:
+         pass
     ```
 
   - Для конструирования регулярного запроса и преобразований графа использовать результаты [Задачи 2](#задача-2-построение-детерминированного-конечного-автомата-по-регулярному-выражению-и-недетерминированного-конечного-автомата-по-графу).
@@ -87,9 +91,10 @@
   - Для конструирования регулярного запроса и графа использовать [Задачи 2](#задача-2-построение-детерминированного-конечного-автомата-по-регулярному-выражению-и-недетерминированного-конечного-автомата-по-графу).
   - Требуемая функция:
   ```python
-  def ms_bfs_based_rpq(regex: str, graph: MultiDiGraph, start_nodes: set[int],
-           final_nodes: set[int]) -> set[tuple[int, int]]:
-    pass
+  def ms_bfs_based_rpq(
+      regex: str, graph: MultiDiGraph, start_nodes: set[int], final_nodes: set[int]
+  ) -> set[tuple[int, int]]:
+      pass
   ```
 - [ ] Добавить собственные тесты при необходимости.
 
@@ -165,12 +170,12 @@
   - Для работы с графом использовать функции из предыдущих задач.
   ```python
   def hellings_based_cfpq(
-    cfg: pyformlang.cfg.CFG,
-    graph: nx.DiGraph,
-    start_nodes: set[int] = None,
-    final_nodes: set[int] = None,
+      cfg: pyformlang.cfg.CFG,
+      graph: nx.DiGraph,
+      start_nodes: set[int] = None,
+      final_nodes: set[int] = None,
   ) -> set[tuple[int, int]]:
-     pass
+      pass
   ```
 - [ ] Добавить собственные тесты при необходимости.
 
@@ -186,7 +191,7 @@
         start_nodes: Set[int] = None,
         final_nodes: Set[int] = None,
     ) -> set[tuple[int, int]]:
-      pass
+        pass
     ```
 - [ ] Добавить собственные тесты при необходимости.
 
@@ -198,20 +203,20 @@
   - Необходимые функции:
   ```python
   def tensor_based_cfpq(
-    rsm: pyformlang.rsa.RecursiveAutomaton,
-    graph: nx.DiGraph,
-    start_nodes: set[int] = None,
-    final_nodes: set[int] = None,
+      rsm: pyformlang.rsa.RecursiveAutomaton,
+      graph: nx.DiGraph,
+      start_nodes: set[int] = None,
+      final_nodes: set[int] = None,
   ) -> set[tuple[int, int]]:
-    pass
+      pass
 
 
   def cfg_to_rsm(cfg: pyformlang.cfg.CFG) -> pyformlang.rsa.RecursiveAutomaton:
-    pass
+      pass
 
 
   def ebnf_to_rsm(ebnf: str) -> pyformlang.rsa.RecursiveAutomaton:
-    pass
+      pass
   ```
 - [ ] Добавить собственные тесты при необходимости.
 
@@ -222,12 +227,12 @@
   - Требуемая функция:
   ```python
   def gll_based_cfpq(
-        rsm: pyformlang.rsa.RecursiveAutomaton,
-        graph: nx.DiGraph,
-        start_nodes: set[int] = None,
-        final_nodes: set[int] = None,
-    ) -> set[tuple[int, int]]:
-    pass
+      rsm: pyformlang.rsa.RecursiveAutomaton,
+      graph: nx.DiGraph,
+      start_nodes: set[int] = None,
+      final_nodes: set[int] = None,
+  ) -> set[tuple[int, int]]:
+      pass
   ```
 - [ ] Добавить собственные тесты при необходимости.
 
@@ -482,8 +487,10 @@ _____________________________________
 def program_to_tree(program: str) -> tuple[ParserRuleContext, bool]:
     pass
 
+
 def nodes_count(tree: ParserRuleContext) -> int:
     pass
+
 
 def tree_to_program(tree: ParserRuleContext) -> str:
     pass
@@ -509,8 +516,9 @@ def tree_to_program(tree: ParserRuleContext) -> str:
 
 ```python
 def typing_program(program: str) -> bool:
-  pass
+    pass
+
 
 def exec_program(program: str) -> dict[str, set[tuple]]:
-  pass
+    pass
 ```

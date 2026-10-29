@@ -11,8 +11,11 @@ def regex_to_dfa(regex: str) -> DeterministicFiniteAutomaton:
     """constructs a minimal DFA for a given regular expression"""
     return Regex(regex).to_epsilon_nfa().to_deterministic().minimize()
 
+
 def graph_to_nfa(
-  graph: MultiDiGraph, start_states: Set[int] | None = None, final_states: Set[int] | None = None
+    graph: MultiDiGraph,
+    start_states: Set[int] | None = None,
+    final_states: Set[int] | None = None,
 ) -> NondeterministicFiniteAutomaton:
     """constructs a nondeterministic finite automaton from a graph"""
     nfa = NondeterministicFiniteAutomaton.from_networkx(graph)
