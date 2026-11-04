@@ -1,5 +1,5 @@
 from pyformlang.cfg import CFG, Production, Terminal
-from collections import defaultdict, deque
+from collections import defaultdict
 import networkx as nx
 
 __all__ = ["cfg_to_weak_normal_form"]
