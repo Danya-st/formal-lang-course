@@ -3,7 +3,6 @@ from collections import deque
 
 import networkx as nx
 import pytest
-from pyformlang.finite_automaton import Symbol
 
 from project.task2 import regex_to_dfa
 from project.task3 import tensor_based_rpq
