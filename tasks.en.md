@@ -50,7 +50,7 @@ If they are not specified, assume all vertices are start and final states.
   - Required function:
   ```python
   def graph_to_nfa(
-    graph: MultiDiGraph, start_states: Set[int], final_states: Set[int]
+      graph: MultiDiGraph, start_states: Set[int], final_states: Set[int]
   ) -> NondeterministicFiniteAutomaton:
       pass
   ```
@@ -66,24 +66,28 @@ If they are not specified, assume all vertices are start and final states.
   It is recommended to use the transitive closure of the adjacency matrix to implement the second function.
   - Required functions:
      ```python
-    def accepts(self, word: Iterable[Symbol]) -> bool:
-      pass
-    def is_empty(self) -> bool:
-      pass
+     def accepts(self, word: Iterable[Symbol]) -> bool:
+         pass
+
+
+     def is_empty(self) -> bool:
+         pass
     ```
 - [ ] Using [sparse matrices from sciPy](https://docs.scipy.org/doc/scipy/reference/sparse.html), implement a **function** to compute the intersection of two finite automata by computing tensor product.
   - Required function:
      ```python
-    def intersect_automata(automaton1: AdjacencyMatrixFA,
-             automaton2: AdjacencyMatrixFA) -> AdjacencyMatrixFA:
-        pass
+     def intersect_automata(
+         automaton1: AdjacencyMatrixFA, automaton2: AdjacencyMatrixFA
+     ) -> AdjacencyMatrixFA:
+         pass
     ```
 - [ ] Based on the previous function, implement a **function** to evaluate regular path queries on graphs: given a graph with specified start and final vertices and a regular expression, return the pairs of vertices from the start and final vertices that are connected by a path forming a word from the language defined by the regular expression.
   - Required function:
      ```python
-    def tensor_based_rpq(regex: str, graph: MultiDiGraph, start_nodes: set[int],
-           final_nodes: set[int]) -> set[tuple[int, int]]:
-        pass
+     def tensor_based_rpq(
+         regex: str, graph: MultiDiGraph, start_nodes: set[int], final_nodes: set[int]
+     ) -> set[tuple[int, int]]:
+         pass
     ```
 
   - To construct the regular query and graph transformations, use the results from [Task 2](#task-2-constructing-a-dfa-from-a-regular-expression-and-a-nfa-from-a-graph).
@@ -97,9 +101,10 @@ If they are not specified, assume all vertices are start and final states.
   - To construct the regular query and graph, use the results from [Task 2](#task-2-constructing-a-dfa-from-a-regular-expression-and-a-nfa-from-a-graph).
   - Required function:
   ```python
-  def ms_bfs_based_rpq(regex: str, graph: MultiDiGraph, start_nodes: set[int],
-           final_nodes: set[int]) -> set[tuple[int, int]]:
-    pass
+  def ms_bfs_based_rpq(
+      regex: str, graph: MultiDiGraph, start_nodes: set[int], final_nodes: set[int]
+  ) -> set[tuple[int, int]]:
+      pass
   ```
 - [ ] Add your own tests as needed.
 
@@ -179,12 +184,12 @@ For writing the report, you may find inspiration in the recommendations [here (i
   - For working with the graph, use functions from previous tasks.
   ```python
   def hellings_based_cfpq(
-    cfg: pyformlang.cfg.CFG,
-    graph: nx.DiGraph,
-    start_nodes: set[int] = None,
-    final_nodes: set[int] = None,
+      cfg: pyformlang.cfg.CFG,
+      graph: nx.DiGraph,
+      start_nodes: set[int] = None,
+      final_nodes: set[int] = None,
   ) -> set[tuple[int, int]]:
-     pass
+      pass
   ```
 - [ ] Add custom tests if necessary.
 
@@ -202,7 +207,7 @@ For writing the report, you may find inspiration in the recommendations [here (i
         start_nodes: Set[int] = None,
         final_nodes: Set[int] = None,
     ) -> set[tuple[int, int]]:
-      pass
+        pass
     ```
 - [ ] Add custom tests if necessary.
 
@@ -216,18 +221,20 @@ For writing the report, you may find inspiration in the recommendations [here (i
   - Required functions:
   ```python
   def tensor_based_cfpq(
-    rsm: pyformlang.rsa.RecursiveAutomaton,
-    graph: nx.DiGraph,
-    start_nodes: set[int] = None,
-    final_nodes: set[int] = None,
+      rsm: pyformlang.rsa.RecursiveAutomaton,
+      graph: nx.DiGraph,
+      start_nodes: set[int] = None,
+      final_nodes: set[int] = None,
   ) -> set[tuple[int, int]]:
-    pass
+      pass
+
 
   def cfg_to_rsm(cfg: pyformlang.cfg.CFG) -> pyformlang.rsa.RecursiveAutomaton:
-    pass
+      pass
+
 
   def ebnf_to_rsm(ebnf: str) -> pyformlang.rsa.RecursiveAutomaton:
-    pass
+      pass
   ```
 - [ ] Add custom tests if necessary.
 
@@ -240,12 +247,12 @@ For writing the report, you may find inspiration in the recommendations [here (i
   - Required function:
   ```python
   def gll_based_cfpq(
-        rsm: pyformlang.rsa.RecursiveAutomaton,
-        graph: nx.DiGraph,
-        start_nodes: set[int] = None,
-        final_nodes: set[int] = None,
-    ) -> set[tuple[int, int]]:
-    pass
+      rsm: pyformlang.rsa.RecursiveAutomaton,
+      graph: nx.DiGraph,
+      start_nodes: set[int] = None,
+      final_nodes: set[int] = None,
+  ) -> set[tuple[int, int]]:
+      pass
   ```
 - [ ] Add custom tests if necessary.
 
@@ -510,8 +517,10 @@ Required functions:
 def program_to_tree(program: str) -> tuple[ParserRuleContext, bool]:
     pass
 
+
 def nodes_count(tree: ParserRuleContext) -> int:
     pass
+
 
 def tree_to_program(tree: ParserRuleContext) -> str:
     pass
@@ -544,8 +553,9 @@ Required functions:
 
 ```python
 def typing_program(program: str) -> bool:
-  pass
+    pass
+
 
 def exec_program(program: str) -> dict[str, set[tuple]]:
-  pass
+    pass
 ```
