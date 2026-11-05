@@ -60,7 +60,9 @@ def tensor_based_cfpq(
             _sym_key(label), sp.csr_matrix((dim, dim), dtype=bool)
         )
 
-    boxes = [(_sym_key(l), AdjacencyMatrixFA(b.dfa)) for l, b in rsm.boxes.items()]
+    boxes = [
+        (_sym_key(label), AdjacencyMatrixFA(b.dfa)) for label, b in rsm.boxes.items()
+    ]
     symbols = {_sym_key(s) for _, a in boxes for s in a.matrices}
 
     rsm_matrices = {}

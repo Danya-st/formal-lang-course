@@ -1,7 +1,6 @@
 """Test cases for the tensor-based CFPQ solution."""
 
 import networkx as nx
-import pytest
 from pyformlang.cfg import CFG, Variable
 from pyformlang.finite_automaton import Symbol
 
